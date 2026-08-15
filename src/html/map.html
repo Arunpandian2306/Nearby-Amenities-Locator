@@ -44,6 +44,38 @@
         <div class="spinner"></div>
     </div>
 
+    <button id="chat-toggle-btn" class="chat-toggle" onclick="toggleChat()">💬 AI Guide</button>
+
+    <div id="ai-chat-panel" class="ai-chat-panel">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="chat-icon">🧭</span>
+                <div>
+                    <h3>AI Travel Guide</h3>
+                    <small id="chat-location-label">No location selected yet</small>
+                </div>
+            </div>
+            <button class="chat-close" onclick="toggleChat()" title="Close">✕</button>
+        </div>
+        <div id="chat-body" class="chat-body">
+            <div class="chat-message chat-ai">
+                <div class="chat-bubble">
+                    👋 <strong>Welcome!</strong> I'm your AI guide for local facilities &amp; beautiful places.<br><br>
+                    <strong>Try asking:</strong><br>
+                    • "What beautiful places are near here?"<br>
+                    • "Recommend good restaurants nearby"<br>
+                    • "Where's the nearest hospital?"<br>
+                    • "Tell me about this area"
+                </div>
+            </div>
+        </div>
+        <form id="chat-form" class="chat-input-area" onsubmit="handleChatSubmit(event)">
+            <input id="chat-input" type="text" placeholder="Ask about facilities, places to visit..." autocomplete="off" />
+            <button type="submit" id="chat-send-btn">➤</button>
+        </form>
+    </div>
+
     <script src="../js/map.js"></script>
+    <script src="../js/ai-chat.js"></script>
 </body>
 </html>

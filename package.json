@@ -1,0 +1,13 @@
+{
+  "name": "nearby-amenities-locator",
+  "version": "1.0.0",
+  "description": "Nearby Amenities Locator with Google Gemini AI chat assistance",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -c-1",
+    "dev": "npx http-server . -p 8080 -c-1"
+  },
+  "dependencies": {
+    "@google/genai": "^0.7.0"
+  }
+}

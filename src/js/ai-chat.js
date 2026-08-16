@@ -1,5 +1,6 @@
-const GEMINI_API_KEY = "AIzaSyCNNzNRVP_hFMVYjwc0E4ZgKdF8KS9v0HE";
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=";
+const APP_ENV = window.__APP_ENV__ || {};
+const GEMINI_API_KEY = (APP_ENV.GEMINI_API_KEY || window.GEMINI_API_KEY || "").trim();
 
 let currentLocationContext = {
     lat: null,
@@ -49,8 +50,8 @@ ${userMessage}`;
 }
 
 async function sendMessageToGemini(userMessage) {
-    if (!GEMINI_API_KEY || GEMINI_API_KEY.includes("xxxxxx")) {
-        return "⚠️ **API Key Not Configured**\n\nPlease set your full Google Gemini API key in `src/js/ai-chat.js` — replace the `GEMINI_API_KEY` value with your actual key from Google AI Studio (https://aistudio.google.com).";
+    if (!GEMINI_API_KEY) {
+        return "⚠️ **API Key Not Configured**\n\nSet `GEMINI_API_KEY` in your shell or `.env` file, then restart the app so `src/js/runtime-env.js` can be generated from it.";
     }
 
     const url = GEMINI_API_URL + GEMINI_API_KEY;
@@ -189,4 +190,3 @@ window.sendMessageToGemini = sendMessageToGemini;
 window.appendChatMessage = appendChatMessage;
 window.handleChatSubmit = handleChatSubmit;
 window.toggleChat = toggleChat;
-

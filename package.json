@@ -4,8 +4,10 @@
   "description": "Nearby Amenities Locator with Google Gemini AI chat assistance",
   "main": "index.html",
   "scripts": {
+    "prestart": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/write-runtime-env.ps1",
     "start": "npx http-server . -p 8080 -c-1",
-    "dev": "npx http-server . -p 8080 -c-1"
+    "predev": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/write-runtime-env.ps1",
+    "dev": "npx http-server . -p 8081 -c-1"
   },
   "dependencies": {
     "@google/genai": "^0.7.0"

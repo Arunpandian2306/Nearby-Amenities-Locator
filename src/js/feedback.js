@@ -36,7 +36,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   const fullMessage = `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`;
 
   emailjs
-    .send("service_n2pg6sa", "template_vslmc1q", {
+    .send("service_ed7w4qc", "template_5t5h3ln", {
       name: name,
       email: email,
       message: fullMessage,
